@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamPass</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+    <div class="result-container">
+        {% if predicted_average is not none %}
+        <p id="sumScore">예상 합격 평균 : {{ "%.2f"|format(predicted_average) }}</p>
+            <p>{{ result_message }}</p>
+        {% else %}
+            <p>{{ result_message }}</p>
+        {% endif %}
+        
+        <button type="button" onclick="location.href='/'" class="returnBtn"> 돌아가기 </button>
+    </div>
+</body>
+
+</html>

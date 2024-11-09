@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamPass</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+    <form class="container" action="/predict" method="POST">
+        <h1 class="titleName">DreamPass</h1>
+
+        <div id="predictionForm">
+            <label for="school">학교 입력</label>
+            <input type="text" id="school" name="school" value="전남대학교" readonly required>
+
+            <label for="college">단대 선택</label>
+            <select id="college" name="college" required>
+                <option value="">단대를 선택하세요</option>
+                <option value="가정교육대학">가정교육대학</option>
+                <option value="간호대학">간호대학</option>
+                <option value="건축대학">건축대학</option>
+                <option value="경영대학">경영대학</option>
+                <option value="공과대학">공과대학</option>
+                <option value="농생명과학대학">농생명과학대학</option>
+                <option value="교육대학">교육대학</option>
+                <option value="인문대학">인문대학</option>
+                <option value="미술대학">미술대학</option>
+                <option value="사범대학">사범대학</option>
+                <option value="사회과학대학">사회과학대학</option>
+                <option value="생명과학대학">생명과학대학</option>
+                <option value="수의대학">수의대학</option>
+                <option value="약학대학">약학대학</option>
+                <option value="자연과학대학">자연과학대학</option>
+                <option value="음악대학">음악대학</option>
+                <option value="의과대학">의과대학</option>
+                <option value="치의대학">치의대학</option>
+                <option value="자율전공학부">자율전공학부</option>
+                <option value="통계학과">통계학과</option>
+                <option value="환경에너지공학과">환경에너지공학과</option>
+            </select>
+
+            <label for="department">학과 선택</label>
+            <select id="department" name="department" required>
+                <option value="">학과를 선택하세요</option>
+                <!-- 선택한 단대에 따라 세부 학과가 동적으로 업데이트됩니다 -->
+            </select>
+
+            <label>전형 유형</label>
+
+            <div class="radio-group">
+                <div class="subject">
+                    <p>학생부 교과</p>
+                    <div class="left-group">
+                        <div class="subject-radio1">
+                            <label><input type="radio" name="radio" value="학생부교과(일반전형)" required> 학생부교과(일반전형)</label>
+                            <label><input type="radio" name="radio" value="학생부교과(지역인재전형)"> 학생부교과(지역인재전형)</label>
+                            <label><input type="radio" name="radio" value="학생부교과(지역기회균형전형)"> 학생부교과(지역기회균형전형)</label>
+                            <label><input type="radio" name="radio" value="학생부교과(사회적배려대상자전형)"> 학생부교과(사회적배려대상자전형)</label>
+                            <label><input type="radio" name="radio" value="학생부교과(농어촌학생전형)"> 학생부교과(농어촌학생전형)</label>
+                            <label><input type="radio" name="radio" value="학생부교과(특성화고교졸업자전형)"> 학생부교과(특성화고교졸업자전형)</label>
+                        </div>
+                        <div class="subject-radio2">
+                            <label><input type="radio" name="radio" value="학생부교과(국가보훈대상자전형)"> 학생부교과(국가보훈대상자전형)</label>
+                            <label><input type="radio" name="radio" value="학생부교과(사회다양성전형)"> 학생부교과(사회다양성전형)</label>
+                            <label><input type="radio" name="radio" value="학생부교과(예체능우수자전형)"> 학생부교과(예체능우수자전형)</label>
+                            <label><input type="radio" name="radio" value="학생부교과(기초생활/차상위/한부모가족전형)"> 학생부교과(기초생활/차상위/한부모가족전형)</label>
+                            <label><input type="radio" name="radio" value="학생부교과(특수교육대상자전형)"> 학생부교과(특수교육대상자전형)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="synthesis">
+                    <p>학생부 종합</p>
+                    <div class="synthesis-radio">
+                        <label><input type="radio" name="radio" value="학생부종합(고교생활우수자전형 유형Ⅰ)"> 학생부종합(고교생활우수자전형 유형Ⅰ)</label>
+                        <label><input type="radio" name="radio" value="학생부종합(후계농업경영인전형)"> 학생부종합(후계농업경영인전형)</label>
+                        <label><input type="radio" name="radio" value="실기/실적(예능우수자전형)"> 실기/실적(예능우수자전형)</label>
+                    </div>
+                </div>
+            </div>
+
+            <label for="score">성적 입력</label>
+            <input type="number" id="score" name="score" min="0.0" max="100" step="0.01" placeholder="성적을 입력하세요" required>
+
+            <button type="submit">예측하기</button>
+        </div>
+    </form>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

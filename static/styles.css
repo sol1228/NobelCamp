@@ -1,0 +1,241 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HakgyoansimByeolbichhaneulTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimByeolbichhaneulTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+}
+
+/*
+body {
+    background-image: url('https://campustown.seoul.go.kr/site/main/file/image/uu/3f456846e28342fcb4624cd31ba68b80');
+    background-size: cover;        
+    background-position: center;     
+    background-repeat: no-repeat; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://campustown.seoul.go.kr/site/main/file/image/uu/3f456846e28342fcb4624cd31ba68b80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(0.5px); /* 흐림 효과 적용 */
+    opacity: 0.7; /* 투명도 설정 */
+    z-index: -1; /* 본문 위에 겹치지 않도록 설정 */
+}
+
+.titleName{
+    font-family: 'HakgyoansimByeolbichhaneulTTF-B';
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 0.5%;
+    color: #1e90ff;
+    margin-top: 3%;
+}
+
+.container {
+    background-color: #f7f7f7e2;
+    margin: 0% 27%;
+    padding: 0% 3%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    margin: 1.7% 0%;
+    color: #333;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 1% 1.5%;
+    margin-bottom: 1.5%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* 전형 구분 */
+
+.radio-group{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 30vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 학생부 교과 */
+.subject{
+    border-right: 2px solid rgb(116, 116, 116);
+    width: 60%;
+}
+.subject p{
+    text-align: center;
+    margin: 4% 0% 5% 0%;
+    font-size: 1.1em;
+    /* border-bottom: #ccc 1px dotted; */
+}
+.left-group{
+    display: flex;
+    flex-direction: row;
+}
+.subject-radio1{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+}
+.subject-radio1 label{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+    margin-top: 0;
+    font-size: 0.9em;
+}
+.subject-radio2{
+    width: 50%;
+    height: 100%;
+    margin-right: 2%;
+}
+.subject-radio2 label{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+    margin-top: 0;
+    font-size: 0.9em;
+}
+
+/* 학생부 종합 */
+.synthesis{
+    width: 40%;
+}
+.synthesis p{
+    text-align: center;
+    margin: 5% 0% 3% 0%;
+    font-size: 1.1em;
+}
+.synthesis-radio{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 6%;
+    margin-top: 8%;
+}
+.synthesis-radio label{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+    margin-top: 0;
+    margin-left: 3%;
+    font-size: 0.9em;
+}
+
+input[type="radio"] {
+    margin-right: 1.5%;
+}
+
+/* 하단 버튼 */
+
+button {
+    width: 100%;
+    height: 4.5vh;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+button:hover {
+    background-color: #0073e6;
+}
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+/* result.html */
+.result-container {
+    background-color: #f7f7f7e2;
+    margin: 0% 27%;
+    padding: 0% 3%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+#sumScore{
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.returnBtn {
+    width: 10em;
+    height: 4.5vh;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20%;
+    margin-bottom: 3%;
+}
+
+.returnBtn:hover {
+    background-color: #0073e6;
+}
